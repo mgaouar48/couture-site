@@ -1,0 +1,184 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { Menu, X, ShoppingCart, User, Scissors, Ruler } from "lucide-react";
+import HeroSection from "@/components/hero-section";
+import FeaturedProducts from "@/components/featured-products";
+import HowItWorks from "@/components/how-it-works";
+import TrustSection from "@/components/trust-section";
+import Footer from "@/components/footer";
+import { useCart } from "@/lib/cart-context";
+
+export default function Page() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { setIsCartOpen, cartCount } = useCart();
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background text-on-background font-body-md antialiased texture-linen select-none">
+      
+      {/* Top Navigation Bar */}
+      <nav className="bg-surface sticky top-0 z-50 w-full border-b border-secondary/20 overflow-hidden">
+        {/* Floating Decorative Tools on the bar */}
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          {/* Scissors near center-left */}
+          <div className="absolute left-[38%] top-1/2 -translate-y-1/2 animate-float-slow opacity-20">
+            <Scissors className="w-6 h-6 text-primary stroke-[1.5] -rotate-12" />
+          </div>
+          {/* Ruler near center */}
+          <div className="absolute left-[50%] top-1/2 -translate-y-1/2 -translate-x-1/2 animate-float-medium opacity-15">
+            <Ruler className="w-7 h-7 text-tertiary stroke-[1.5] rotate-6" />
+          </div>
+          {/* Thimble SVG near right center */}
+          <div className="absolute left-[62%] top-1/2 -translate-y-1/2 animate-float-fast opacity-20">
+            <svg className="w-5 h-5 text-amber-500 fill-current" viewBox="0 0 24 24">
+              <path d="M7 21h10l-1.5-12a4 4 0 0 0-7 0L7 21z" opacity="0.9"/>
+              <circle cx="10" cy="13" r="0.8" fill="#fff"/>
+              <circle cx="12" cy="13" r="0.8" fill="#fff"/>
+              <circle cx="14" cy="13" r="0.8" fill="#fff"/>
+            </svg>
+          </div>
+          {/* Thread spool far right */}
+          <div className="absolute right-[28%] top-1/2 -translate-y-1/2 animate-float-slow opacity-20">
+            <svg className="w-5 h-7 text-[#bd1e7c] fill-current" viewBox="0 0 24 24">
+              <rect x="6" y="4" width="12" height="16" rx="1" fill="currentColor" opacity="0.9"/>
+              <ellipse cx="12" cy="3" rx="8" ry="2" fill="#ffdbe8"/>
+              <ellipse cx="12" cy="21" rx="8" ry="2" fill="#ffdbe8"/>
+              <path d="M6 8h12M6 12h12M6 16h12" stroke="#fff" strokeWidth="1"/>
+            </svg>
+          </div>
+          {/* Small needle left side */}
+          <div className="absolute left-[30%] top-1/2 -translate-y-1/2 animate-float-medium opacity-20">
+            <svg className="w-3 h-8 text-primary fill-current" viewBox="0 0 8 32">
+              <path d="M3.5 0 C3.5 0 2 1 2 2 L2 28 L3.5 32 L5 28 L5 2 C5 1 4.5 0 3.5 0Z" fill="currentColor" opacity="0.8"/>
+              <ellipse cx="3.5" cy="3" rx="1.5" ry="1.5" fill="#ffdbe8"/>
+            </svg>
+          </div>
+        </div>
+
+        <div className="relative flex justify-between items-center px-margin-desktop h-24 w-full max-w-container-max mx-auto">
+          
+          {/* Logo — enlarged, right-aligned visually */}
+          <a className="flex items-center flex-shrink-0" href="#">
+            <div className="relative w-56 h-20 select-none drop-shadow-sm">
+              <Image
+                src="/images/logo_clean.png"
+                alt="Boutique Farah Logo"
+                fill
+                className="object-contain object-left"
+                priority
+                unoptimized
+              />
+            </div>
+          </a>
+
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-gutter">
+            <a
+              className="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md hover:text-primary transition-colors scale-95 active:scale-90 transition-transform duration-150"
+              href="#"
+            >
+              Accueil
+            </a>
+            <a
+              className="text-secondary hover:text-primary font-label-md text-label-md transition-colors scale-95 active:scale-90 transition-transform duration-150"
+              href="#"
+            >
+              Boutique
+            </a>
+            <a
+              className="text-secondary hover:text-primary font-label-md text-label-md transition-colors scale-95 active:scale-90 transition-transform duration-150"
+              href="#contact"
+            >
+              Contact
+            </a>
+          </div>
+
+          {/* Right navbar elements */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="text-secondary hover:text-primary transition-colors cursor-pointer relative"
+              aria-label="Cart"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-primary text-on-primary text-[9px] font-bold min-w-[16px] h-4 rounded-full flex items-center justify-center px-1 border border-surface shadow-xs">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="hidden md:inline-flex bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm cursor-pointer"
+            >
+              Mon Panier
+            </button>
+
+            {/* Mobile Menu Icon */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-secondary hover:text-primary p-1 cursor-pointer"
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+
+        </div>
+      </nav>
+
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-40 bg-black/40 backdrop-blur-xs transition-opacity duration-300">
+          <div className="fixed top-[80px] right-0 left-0 bg-surface border-b border-outline-variant/30 p-6 flex flex-col gap-4 shadow-xl z-50 animate-in slide-in-from-top duration-200">
+            <a
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-primary font-bold font-label-md text-label-md border-b border-outline-variant/20 pb-2"
+              href="#"
+            >
+              Accueil
+            </a>
+            <a
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-secondary font-label-md text-label-md border-b border-outline-variant/20 pb-2 hover:text-primary transition-colors"
+              href="#"
+            >
+              Boutique
+            </a>
+            <a
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-secondary font-label-md text-label-md border-b border-outline-variant/20 pb-2 hover:text-primary transition-colors"
+              href="#contact"
+            >
+              Contact
+            </a>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setIsCartOpen(true);
+              }}
+              className="bg-primary text-on-primary font-label-md text-label-md py-3 rounded-full text-center transition-all duration-200 mt-2 cursor-pointer hover:bg-primary-container hover:text-on-primary-container"
+            >
+              Mon Panier
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Main Content Sections */}
+      <main className="flex-grow">
+        <HeroSection />
+        <FeaturedProducts />
+        <HowItWorks />
+        <TrustSection />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Boutique Farah - Matériel de Couture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-error": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-fixed-variant": "#474746",
+                "on-secondary": "#ffffff",
+                "on-tertiary-fixed": "#241a00",
+                "on-tertiary": "#ffffff",
+                "secondary": "#5f5e5e",
+                "secondary-fixed": "#e4e2e1",
+                "surface-bright": "#f9f9f9",
+                "surface-variant": "#e2e2e2",
+                "on-tertiary-container": "#4e3d00",
+                "on-background": "#1a1c1c",
+                "inverse-surface": "#2f3131",
+                "on-secondary-container": "#656464",
+                "surface-container-highest": "#e2e2e2",
+                "on-error-container": "#93000a",
+                "inverse-on-surface": "#f1f1f1",
+                "primary-container": "#bd1e7c",
+                "on-primary-container": "#ffdbe8",
+                "background": "#f9f9f9",
+                "tertiary": "#735c00",
+                "primary": "#980061",
+                "tertiary-fixed-dim": "#e9c349",
+                "secondary-container": "#e4e2e1",
+                "surface-tint": "#b31174",
+                "on-secondary-fixed": "#1b1c1c",
+                "on-tertiary-fixed-variant": "#574500",
+                "surface-container-high": "#e8e8e8",
+                "error": "#ba1a1a",
+                "on-surface-variant": "#574149",
+                "primary-fixed": "#ffd8e6",
+                "on-primary-fixed-variant": "#8b0059",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#ffafd1",
+                "on-primary": "#ffffff",
+                "surface-container": "#eeeeee",
+                "primary-fixed-dim": "#ffafd1",
+                "outline": "#8a707a",
+                "tertiary-container": "#cba72f",
+                "on-primary-fixed": "#3d0024",
+                "on-surface": "#1a1c1c",
+                "surface": "#f9f9f9",
+                "secondary-fixed-dim": "#c8c6c5",
+                "surface-container-low": "#f3f3f3",
+                "outline-variant": "#ddbec9",
+                "surface-dim": "#dadada",
+                "tertiary-fixed": "#ffe088"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-desktop": "48px",
+                "container-max": "1280px",
+                "gutter": "24px",
+                "base": "8px",
+                "margin-mobile": "16px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-md": [
+                        "Manrope"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Manrope"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "body-lg": [
+                        "Manrope"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "label-sm": [
+                        "Manrope"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .texture-linen {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .texture-herringbone {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(152, 0, 97, 0.03) 10px, rgba(152, 0, 97, 0.03) 20px), repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(152, 0, 97, 0.03) 10px, rgba(152, 0, 97, 0.03) 20px);
+        }
+        .stitching-border {
+            border: 2px dashed #ddbec9;
+        }
+        .stitching-divider {
+            background-image: linear-gradient(to right, #ddbec9 50%, transparent 50%);
+            background-size: 20px 2px;
+            background-repeat: repeat-x;
+            height: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased texture-linen">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface-dim sticky top-0 z-50 w-full border-b border-secondary/20 dark:border-secondary-fixed/20">
+<div class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<a class="flex items-center" href="#">
+<img alt="Boutique Farah Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJwiRy-CWDzDor5Jt1XLPKfLPje1pIAeLm5hjzB1OrALDLGgf6xr3YQ8_4uaSj7JN-stwXMvVJ0oHWJDyAMjbPhGUB390JUt1y6B0ioI0UqiIXru6v0KqHxPigUM8mYwjV9wZM_50PDxJlwIyRduZNGrJW5yT64uFNh3bWGL4-WFw8Wf5obLnI-KQK7iCxBUBGVosVU0yPR8f9OhVwzVgIyeGN5pFQ6WilhITsxMKxR_rjdhT77IGWIBT8V6uPT5V6Jk2ecZNR7g"/>
+</a>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-md text-label-md hover:text-primary transition-colors scale-95 active:scale-90 transition-transform duration-150" href="#">Accueil</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed-dim transition-colors scale-95 active:scale-90 transition-transform duration-150" href="#">Outils</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed-dim transition-colors scale-95 active:scale-90 transition-transform duration-150" href="#">Machines</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed-dim transition-colors scale-95 active:scale-90 transition-transform duration-150" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+<button class="text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+<button class="hidden md:inline-flex bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+                    Mon Atelier
+                </button>
+<button class="md:hidden text-secondary dark:text-secondary-fixed-dim">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Professional sewing workshop setting with a modern sewing machine" class="w-full h-full object-cover opacity-80" data-alt="A warm, sunlit professional sewing workshop setting. In the foreground, a modern, sleek white sewing machine sits on a clean, light wood table. Next to it are heavy-duty fabric scissors, a neatly rolled measuring tape, and various high-quality tailoring tools. The lighting is soft and natural, streaming in from an off-camera window, casting gentle shadows. The overall aesthetic is professional, utilitarian, yet inviting and warm, focusing on the high quality of the equipment and the craft of sewing. The color palette features warm woods, crisp whites, and subtle metallic accents." src="https://lh3.googleusercontent.com/aida/AP1WRLu-alEsEpNe3SwrH6oGm5CRCFqCcPOBrSTY5RtbfJJUJVCeIKVrkqrqanq7oMovhETAcTmA2ZKXCZN637bwLhShY7zO38tIrGkjHBOB1HZJ0vCykLkkTtrQH_MiAS3XRo6Q2G8zPezRrFVJ6-lF7fXplfEwRs3qYu_Fqdg6aQNlNeoX2-9VZDvEnjuU1bRK3m9229O67OjViwazYNMub4SQvn3qXy7mh6nam-EozsOeJClaICUnXxbloXA"/>
+<div class="absolute inset-0 bg-surface/60 backdrop-blur-sm mix-blend-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-surface/40 to-surface"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto flex flex-col items-center">
+<img alt="Boutique Farah Logo" class="h-24 md:h-32 w-auto object-contain mb-6 drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJwiRy-CWDzDor5Jt1XLPKfLPje1pIAeLm5hjzB1OrALDLGgf6xr3YQ8_4uaSj7JN-stwXMvVJ0oHWJDyAMjbPhGUB390JUt1y6B0ioI0UqiIXru6v0KqHxPigUM8mYwjV9wZM_50PDxJlwIyRduZNGrJW5yT64uFNh3bWGL4-WFw8Wf5obLnI-KQK7iCxBUBGVosVU0yPR8f9OhVwzVgIyeGN5pFQ6WilhITsxMKxR_rjdhT77IGWIBT8V6uPT5V6Jk2ecZNR7g"/>
+<p class="font-body-lg text-on-surface-variant mb-8 max-w-2xl text-balance">
+                Tout le matériel de couture et d’outillage pour vos besoins professionnels et personnels
+            </p>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                Voir les produits
+            </button>
+</div>
+</header>
+<!-- Decorative Divider -->
+<div class="w-full max-w-5xl mx-auto py-12 md:py-20">
+<div class="flex items-center justify-center gap-4">
+<div class="h-px w-32 bg-outline-variant"></div>
+<span class="material-symbols-outlined text-outline">straighten</span>
+<div class="h-px w-32 bg-outline-variant"></div>
+</div>
+</div>
+<!-- Featured Products Section -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop pb-12 md:pb-20">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-on-surface mb-4">Notre Sélection Atelier</h2>
+<p class="text-on-surface-variant font-body-md max-w-2xl mx-auto">Des outils de qualité professionnelle pour donner vie à toutes vos créations textiles.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/30 flex flex-col relative">
+<div class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-3 py-1 rounded-full font-label-sm z-10 shadow-sm">
+                    NOUVEAU
+                </div>
+<div class="aspect-square bg-white relative p-6 texture-herringbone flex items-center justify-center">
+<img alt="Modern electric sewing machine" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLuSeIUDcT7mlkhoFmr1off_Df2gkpEsCcbWRl_xr0S0eNkomvipOz65I1CFM7i0udpiYi3CbrRoae-cCLs1_E2hy6xL4-_nPogZroeATuc8y8bJiFZuzReZZnR3jzrCS9qODg_QBrcWIGnX0m8uDpf4waxdJbP-evJEaSSAkw_zo7jyOAxzqvulehaMrG5Mfxvk8Ikhv_oqMnSolnYYnjMaxmpZWkG0GczStJFUByTei6o5rPxSHbcyDg"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-body-lg font-semibold text-on-surface mb-2">Machine à coudre professionnelle</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Performance et précision pour vos projets d'envergure.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-primary">45,000 DA</span>
+<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/30 flex flex-col">
+<div class="aspect-square bg-white relative p-6 texture-herringbone flex items-center justify-center">
+<img alt="Professional heavy-duty tailor scissors" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLsfVpklqhb9-7q3a-V3KC7OCev4qE53ZyZRsh7L53hyLOzpFkUckf5EDQuHzEQpm-e8u3XJTIqU3u8w1dueDHhBpcXEMRfizxmnxrXQNxV84oDZr1jRQ8h74ttOsRSGbmu8vARQ5VNZ1PSwWw1gd5YAQg5eznz7PyjIjCfAGKv0wOt9e4UXOop061QlK_Ic4vrpf_Q6Eyp9tRygQhtjjOPfW6JZJ8ThM286Zwp32NWdoomQh5cg3Y0k4II"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-body-lg font-semibold text-on-surface mb-2">Ciseaux de couture robustes</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Lame tranchante pour une découpe nette de tous tissus.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-primary">3,500 DA</span>
+<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/30 flex flex-col">
+<div class="aspect-square bg-white relative p-6 texture-herringbone flex items-center justify-center">
+<img alt="Professional rotary cutter" class="object-contain w-full h-full mix-blend-multiply group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvElu-SGpjaiOOk12se5nU7KxWd21Z0rYsVHVSqAXPlWBNPCT3Yxn2KFgi74hAsDDaBtaouAxFjzaVw92T9rcF4BWFQgASd9Vle9IMVpNEIMkaBrLKBHUkIrtGZ-kJCAPCYDLHd6-ukzz2jBM9-1aIYOU-9Oovfak_h5JgmYS4bytNF4GvpOHfrk38NHgo8N-JJyfM3pIwmZw4k3ildhCUog0himjQy592ejmYMtwf2sCUcOnnxxrBSeQ"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-body-lg font-semibold text-on-surface mb-2">Cutter rotatif et règle</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Idéal pour le patchwork et les découpes droites rapides.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-primary">2,800 DA</span>
+<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/30 flex flex-col">
+<div class="aspect-square bg-white relative p-6 texture-herringbone flex items-center justify-center">
+<img alt="Measuring tape" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLu-alEsEpNe3SwrH6oGm5CRCFqCcPOBrSTY5RtbfJJUJVCeIKVrkqrqanq7oMovhETAcTmA2ZKXCZN637bwLhShY7zO38tIrGkjHBOB1HZJ0vCykLkkTtrQH_MiAS3XRo6Q2G8zPezRrFVJ6-lF7fXplfEwRs3qYu_Fqdg6aQNlNeoX2-9VZDvEnjuU1bRK3m9229O67OjViwazYNMub4SQvn3qXy7mh6nam-EozsOeJClaICUnXxbloXA" style="object-position: 70% 50%;"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-body-lg font-semibold text-on-surface mb-2">Mètre ruban de couture</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-2">L'indispensable classique, souple et résistant.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-primary">450 DA</span>
+<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/30 flex flex-col">
+<div class="aspect-square bg-white relative p-6 texture-herringbone flex items-center justify-center">
+<img alt="Transparent sewing ruler" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvElu-SGpjaiOOk12se5nU7KxWd21Z0rYsVHVSqAXPlWBNPCT3Yxn2KFgi74hAsDDaBtaouAxFjzaVw92T9rcF4BWFQgASd9Vle9IMVpNEIMkaBrLKBHUkIrtGZ-kJCAPCYDLHd6-ukzz2jBM9-1aIYOU-9Oovfak_h5JgmYS4bytNF4GvpOHfrk38NHgo8N-JJyfM3pIwmZw4k3ildhCUog0himjQy592ejmYMtwf2sCUcOnnxxrBSeQ" style="object-position: 20% 50%;"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-body-lg font-semibold text-on-surface mb-2">Règle de couture transparente</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Graduations précises pour le modélisme.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-primary">1,200 DA</span>
+<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-outline-variant/30 flex flex-col">
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-sm z-10 shadow-sm">
+                    POPULAIRE
+                </div>
+<div class="aspect-square bg-white relative p-6 texture-herringbone flex items-center justify-center">
+<img alt="Sewing accessories kit" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLu-alEsEpNe3SwrH6oGm5CRCFqCcPOBrSTY5RtbfJJUJVCeIKVrkqrqanq7oMovhETAcTmA2ZKXCZN637bwLhShY7zO38tIrGkjHBOB1HZJ0vCykLkkTtrQH_MiAS3XRo6Q2G8zPezRrFVJ6-lF7fXplfEwRs3qYu_Fqdg6aQNlNeoX2-9VZDvEnjuU1bRK3m9229O67OjViwazYNMub4SQvn3qXy7mh6nam-EozsOeJClaICUnXxbloXA"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-body-lg font-semibold text-on-surface mb-2">Kit d'accessoires</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Le nécessaire complet pour démarrer sereinement.</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-headline-md text-primary">5,500 DA</span>
+<button class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="bg-surface-container-high py-12 md:py-20 relative overflow-hidden texture-herringbone">
+<!-- Decorative stitching -->
+<div class="absolute top-0 left-0 w-full stitching-divider opacity-50"></div>
+<div class="absolute bottom-0 left-0 w-full stitching-divider opacity-50"></div>
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<h2 class="font-headline-lg text-center text-on-surface mb-12">Procédure de Commande</h2>
+<div class="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-12 relative">
+<!-- Step 1 -->
+<div class="flex-1 flex flex-col items-center text-center relative z-10">
+<div class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-md shadow-md mb-6 relative">
+                        1
+                        <div class="absolute -bottom-2 -right-2 bg-surface rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">search</span>
+</div>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2">Choisissez</h3>
+<p class="text-on-surface-variant text-sm max-w-xs">Parcourez notre catalogue et sélectionnez vos articles d'outillage ou machines.</p>
+</div>
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-8 left-[16.6%] right-[16.6%] h-px border-t-2 border-dashed border-outline opacity-30 z-0"></div>
+<!-- Step 2 -->
+<div class="flex-1 flex flex-col items-center text-center relative z-10">
+<div class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-md shadow-md mb-6 relative">
+                        2
+                        <div class="absolute -bottom-2 -right-2 bg-surface rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">list_alt</span>
+</div>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2">Consultez</h3>
+<p class="text-on-surface-variant text-sm max-w-xs">Vérifiez votre panier et les détails de vos produits de couture.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex-1 flex flex-col items-center text-center relative z-10">
+<div class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-headline-md shadow-md mb-6 relative">
+                        3
+                        <div class="absolute -bottom-2 -right-2 bg-surface rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<h3 class="font-headline-md text-on-surface mb-2">Commandez</h3>
+<p class="text-on-surface-variant text-sm max-w-xs">Validez et préparez-vous à recevoir votre matériel à l'atelier.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-surface-container rounded-2xl p-8 border border-outline-variant/50 shadow-sm relative overflow-hidden">
+<!-- Decorative needle -->
+<span class="material-symbols-outlined absolute -top-4 -right-4 text-6xl text-tertiary-container opacity-20 transform rotate-45">straighten</span>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<h4 class="font-label-md text-on-surface uppercase tracking-wider">Livraison rapide</h4>
+<p class="text-sm text-on-surface-variant">Partout sur le territoire.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<h4 class="font-label-md text-on-surface uppercase tracking-wider">Paiement à la livraison</h4>
+<p class="text-sm text-on-surface-variant">Sécurité et tranquillité.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<h4 class="font-label-md text-on-surface uppercase tracking-wider">Assistance WhatsApp</h4>
+<p class="text-sm text-on-surface-variant">Un conseil ? Nous sommes là.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim full-width">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-base w-full max-w-container-max mx-auto">
+<div class="text-center md:text-left mb-4 md:mb-0">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim mb-1">
+<img alt="Boutique Farah Logo" class="h-8 w-auto object-contain inline-block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJwiRy-CWDzDor5Jt1XLPKfLPje1pIAeLm5hjzB1OrALDLGgf6xr3YQ8_4uaSj7JN-stwXMvVJ0oHWJDyAMjbPhGUB390JUt1y6B0ioI0UqiIXru6v0KqHxPigUM8mYwjV9wZM_50PDxJlwIyRduZNGrJW5yT64uFNh3bWGL4-WFw8Wf5obLnI-KQK7iCxBUBGVosVU0yPR8f9OhVwzVgIyeGN5pFQ6WilhITsxMKxR_rjdhT77IGWIBT8V6uPT5V6Jk2ecZNR7g"/>
+</div>
+<div class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim">
+                    © 2024 Boutique Farah. Artisanal excellence in every stitch.
+                </div>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-tertiary dark:hover:text-tertiary-fixed-dim opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-tertiary dark:hover:text-tertiary-fixed-dim opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-tertiary dark:hover:text-tertiary-fixed-dim opacity-80 hover:opacity-100 transition-opacity" href="#">Shipping &amp; Returns</a>
+<a class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim hover:text-tertiary dark:hover:text-tertiary-fixed-dim opacity-80 hover:opacity-100 transition-opacity" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>
