@@ -186,7 +186,7 @@ export default function HeroSection() {
               Voir les produits
             </a>
             <a
-              href="#"
+              href="/boutique"
               className="flex items-center gap-2 bg-surface/90 backdrop-blur-sm text-primary border-2 border-primary px-8 py-4 rounded-full font-label-md text-label-md shadow-lg hover:shadow-xl hover:-translate-y-1 hover:bg-primary hover:text-on-primary transition-all duration-300 cursor-pointer group"
             >
               <ShoppingBag className="w-4 h-4 transition-transform group-hover:scale-110" />

@@ -23,7 +23,12 @@ export default function BoutiquePage() {
   useEffect(() => {
     const stored = localStorage.getItem("admin_products");
     if (stored) {
-      setProducts(JSON.parse(stored));
+      try {
+        setProducts(JSON.parse(stored));
+      } catch (e) {
+        console.error("Failed to parse admin_products from localStorage", e);
+        setProducts(ALL_PRODUCTS);
+      }
     } else {
       setProducts(ALL_PRODUCTS);
       localStorage.setItem("admin_products", JSON.stringify(ALL_PRODUCTS));

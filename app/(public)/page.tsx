@@ -82,7 +82,7 @@ export default function Page() {
             </a>
             <a
               className="text-secondary hover:text-primary font-label-md text-label-md transition-colors scale-95 active:scale-90 transition-transform duration-150"
-              href="#"
+              href="/boutique"
             >
               Boutique
             </a>
@@ -146,7 +146,7 @@ export default function Page() {
             <a
               onClick={() => setMobileMenuOpen(false)}
               className="text-secondary font-label-md text-label-md border-b border-outline-variant/20 pb-2 hover:text-primary transition-colors"
-              href="#"
+              href="/boutique"
             >
               Boutique
             </a>

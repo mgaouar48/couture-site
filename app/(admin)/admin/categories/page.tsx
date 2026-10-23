@@ -62,7 +62,12 @@ export default function AdminCategoriesPage() {
   useEffect(() => {
     const storedProducts = localStorage.getItem("admin_products");
     if (storedProducts) {
-      setProducts(JSON.parse(storedProducts));
+      try {
+        setProducts(JSON.parse(storedProducts));
+      } catch (e) {
+        console.error("Failed to parse admin_products from localStorage", e);
+        setProducts(ALL_PRODUCTS);
+      }
     } else {
       setProducts(ALL_PRODUCTS);
       localStorage.setItem("admin_products", JSON.stringify(ALL_PRODUCTS));
@@ -70,7 +75,12 @@ export default function AdminCategoriesPage() {
 
     const storedCategories = localStorage.getItem("admin_categories");
     if (storedCategories) {
-      setCategories(JSON.parse(storedCategories));
+      try {
+        setCategories(JSON.parse(storedCategories));
+      } catch (e) {
+        console.error("Failed to parse admin_categories from localStorage", e);
+        setCategories(CATEGORIES);
+      }
     } else {
       setCategories(CATEGORIES);
       localStorage.setItem("admin_categories", JSON.stringify(CATEGORIES));

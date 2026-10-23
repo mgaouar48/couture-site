@@ -116,7 +116,12 @@ export default function AdminOrdersPage() {
   useEffect(() => {
     const stored = localStorage.getItem("admin_orders");
     if (stored) {
-      setOrders(JSON.parse(stored));
+      try {
+        setOrders(JSON.parse(stored));
+      } catch (e) {
+        console.error("Failed to parse admin_orders from localStorage", e);
+        setOrders(INITIAL_MOCK_ORDERS);
+      }
     } else {
       setOrders(INITIAL_MOCK_ORDERS);
       localStorage.setItem("admin_orders", JSON.stringify(INITIAL_MOCK_ORDERS));

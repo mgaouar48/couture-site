@@ -8,7 +8,12 @@ export default function FeaturedProducts() {
   useEffect(() => {
     const stored = localStorage.getItem("admin_products");
     if (stored) {
-      setProducts(JSON.parse(stored).slice(0, 6));
+      try {
+        setProducts(JSON.parse(stored).slice(0, 6));
+      } catch (e) {
+        console.error("Failed to parse admin_products from localStorage", e);
+        setProducts(ALL_PRODUCTS.slice(0, 6));
+      }
     } else {
       setProducts(ALL_PRODUCTS.slice(0, 6));
     }

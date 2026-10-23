@@ -33,12 +33,16 @@ export default function ProductPage({ params }: PageProps) {
   useEffect(() => {
     const stored = localStorage.getItem("admin_products");
     if (stored) {
-      const localProducts: Product[] = JSON.parse(stored);
-      const found = localProducts.find((p) => p.id === productId);
-      if (found) {
-        setProduct(found);
+      try {
+        const localProducts: Product[] = JSON.parse(stored);
+        const found = localProducts.find((p) => p.id === productId);
+        if (found) {
+          setProduct(found);
+        }
+        setRelatedProducts(localProducts.filter((p) => p.id !== productId).slice(0, 4));
+      } catch (e) {
+        console.error("Failed to parse admin_products from localStorage", e);
       }
-      setRelatedProducts(localProducts.filter((p) => p.id !== productId).slice(0, 4));
     }
   }, [productId]);
 
